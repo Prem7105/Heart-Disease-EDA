@@ -41,3 +41,18 @@ jupyter notebook heart.ipynb
 ```
 
 > Note: the notebook also installs an optional helper package, `sheryanalysis`, used for a quick automated EDA summary. It isn't required to reproduce the rest of the analysis.
+
+---
+
+## Analysis architecture
+
+This repository is a notebook-based analysis workflow rather than a deployed service. The notebook loads the supplied heart dataset, inspects and cleans the records, explores feature relationships, and prepares data for binary classification.
+
+```mermaid
+flowchart LR
+  A[heart.csv] --> B[Notebook data inspection]
+  B --> C[Cleaning and feature engineering]
+  C --> D[Exploratory analysis]
+  D --> E[Feature selection and model preparation]
+  E --> F[Notebook results]
+```
